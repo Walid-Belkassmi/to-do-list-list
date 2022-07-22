@@ -50,15 +50,9 @@ class App extends React.Component {
     return (
       <>
         <Form addTask={this.addTask} />
-        {/* <List tasks={this.state.tasks} />; */}
 
         {this.state.tasks.map((task) => {
-          return (
-            <List
-              tasks={task}
-              description={() => this.addTask(task.description)}
-            />
-          );
+          return <List tasks={task} />;
         })}
       </>
     );
