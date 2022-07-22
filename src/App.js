@@ -11,7 +11,7 @@ class App extends React.Component {
 
   addTask = (taskToDo) => {
     console.log(taskToDo);
-    let clonedTask = [...this.state.tasks, taskToDo.target.value];
+    let clonedTask = [...this.state.task, taskToDo];
 
     this.setState({
       tasks: clonedTask,
@@ -21,8 +21,7 @@ class App extends React.Component {
   render() {
     return (
       <>
-        <h1 class="text-3xl font-bold underline">Hello world!</h1>
-        <Form />
+        <Form addTask={this.addTask} />
       </>
     );
   }
