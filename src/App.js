@@ -5,7 +5,7 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      task: [],
+      tasks: [],
     };
   }
 
@@ -20,8 +20,7 @@ class App extends React.Component {
   render() {
     return (
       <>
-        <h1 class="text-3xl font-bold underline">Hello world!</h1>
-        <Form />
+        <Form addTask={this.addTask} />
       </>
     );
   }
