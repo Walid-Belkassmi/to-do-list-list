@@ -9,7 +9,7 @@ class List extends React.Component {
           return <List tasks={task} />;
         })} */}
 
-        <p>{this.props.tasks.description}</p>
+        {/* <p>{this.props.tasks.description}</p>
         <button
           className="bg-green-300 font-semibold hover:bg-green-500 rounded-3xl hover:text-white px-7 py-3 mt-3"
           onClick={this.props.delete}
@@ -18,7 +18,26 @@ class List extends React.Component {
         </button>
         <button className="bg-yellow-300 font-semibold hover:bg-yellow-500 rounded-3xl hover:text-white px-7 py-3 mx-7 my-4">
           Modifier
-        </button>
+        </button> */}
+
+        {this.props.tasks.map((task, i) => {
+          return (
+            <div key={i}>
+              <p>{task.description}</p>
+              <button
+                className="bg-green-300 font-semibold hover:bg-green-500 rounded-3xl hover:text-white px-7 py-3 mt-3"
+                onClick={() => {
+                  this.props.deleteTask(i);
+                }}
+              >
+                Supprimer
+              </button>
+              <button className="bg-yellow-300 font-semibold hover:bg-yellow-500 rounded-3xl hover:text-white px-7 py-3 mx-7 my-4">
+                Modifier
+              </button>
+            </div>
+          );
+        })}
       </div>
     );
   }

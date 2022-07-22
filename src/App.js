@@ -40,20 +40,22 @@ class App extends React.Component {
     });
   };
 
-  modifTask = (i) => {
-    let clonedTask = [...this.state.tasks]
-    clonedTask
-    
-  }
+  // modifTask = (i) => {
+  //   let clonedTask = [...this.state.tasks]
+  //   clonedTask
+
+  // }
 
   render() {
     return (
       <>
         <Form addTask={this.addTask} />
 
-        {this.state.tasks.map((task) => {
+        {/* {this.state.tasks.map((task) => {
           return <List tasks={task} />;
-        })}
+        })} */}
+
+        <List tasks={this.state.tasks} deleteTask={this.deleteTask} />
       </>
     );
   }
