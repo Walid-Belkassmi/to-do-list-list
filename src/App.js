@@ -11,7 +11,7 @@ class App extends React.Component {
   }
 
   addTask = (taskToDo) => {
-    console.log(taskToDo);
+    // console.log(taskToDo);
     let clonedTask = [...this.state.tasks];
     clonedTask = [
       {
@@ -33,7 +33,7 @@ class App extends React.Component {
     const index = clonedTasks.indexOf(i);
     clonedTasks.splice(index, 1);
 
-    console.log('delete')
+    console.log("delete");
 
     this.setState({
       tasks: clonedTasks,
@@ -49,8 +49,16 @@ class App extends React.Component {
     return (
       <>
         <Form addTask={this.addTask} />
-        <List tasks={this.state.tasks} delete={this.deleteTask}/>
-        
+        {/* <List tasks={this.state.tasks} />; */}
+
+        {this.state.tasks.map((task) => {
+          return (
+            <List
+              tasks={this.state.tasks}
+              description={() => this.addTask(task.description)}
+            />
+          );
+        })}
       </>
     );
   }
