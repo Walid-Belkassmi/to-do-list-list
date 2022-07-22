@@ -9,11 +9,12 @@ class App extends React.Component {
     };
   }
 
-  addTask = (string) => {
-    const clonedAddTask = [...this.state.task, string.target.value];
+  addTask = (taskToDo) => {
+    console.log(taskToDo);
+    let clonedAddTask = [...this.state.tasks, taskToDo.target.value];
 
     this.setState({
-      task: clonedAddTask,
+      tasks: clonedAddTask,
     });
   };
 
