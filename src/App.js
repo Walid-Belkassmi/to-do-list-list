@@ -40,6 +40,11 @@ class App extends React.Component {
     });
   };
 
+  modifTask = (i) => {
+    let clonedTask = [...this.state.tasks]
+    
+  }
+
   render() {
     return (
       <>
