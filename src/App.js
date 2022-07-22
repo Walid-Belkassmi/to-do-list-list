@@ -42,6 +42,7 @@ class App extends React.Component {
 
   modifTask = (i) => {
     let clonedTask = [...this.state.tasks]
+    clonedTask
     
   }
 
@@ -54,7 +55,7 @@ class App extends React.Component {
         {this.state.tasks.map((task) => {
           return (
             <List
-              tasks={this.state.tasks}
+              tasks={task}
               description={() => this.addTask(task.description)}
             />
           );
