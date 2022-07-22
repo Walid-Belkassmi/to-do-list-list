@@ -5,17 +5,26 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      task: [],
+      tasks: [],
     };
   }
 
   addTask = (taskToDo) => {
     console.log(taskToDo);
-    let clonedTask = [...this.state.task, taskToDo];
+    let clonedTask = [...this.state.tasks];
+    clonedTask = [
+      {
+        description: taskToDo,
+        status: "To do",
+      },
+      ...this.state.tasks,
+    ];
 
     this.setState({
       tasks: clonedTask,
     });
+
+    console.log(this.state.tasks);
   };
 
   render() {
