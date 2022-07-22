@@ -6,7 +6,7 @@ class List extends React.Component {
     return (
       <div>
         {/* {this.state.tasks.map((task) => {
-          return <List tasks={this.state.tasks} />;
+          return <List tasks={task} />;
         })} */}
 
         <p>{this.props.tasks.description}</p>
