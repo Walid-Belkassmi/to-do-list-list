@@ -33,6 +33,8 @@ class App extends React.Component {
     const index = clonedTasks.indexOf(i);
     clonedTasks.splice(index, 1);
 
+    console.log("delete");
+
     this.setState({
       tasks: clonedTasks,
     });
@@ -42,7 +44,7 @@ class App extends React.Component {
     return (
       <>
         <Form addTask={this.addTask} />
-        {/* <List tasks={this.state.tasks} /> */}
+        <List tasks={this.state.tasks} delete={this.deleteTask} />
       </>
     );
   }
