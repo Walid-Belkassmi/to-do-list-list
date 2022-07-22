@@ -14,6 +14,18 @@ class Form extends React.Component {
     });
   };
 
+  handleSubmit = (e) => {
+    e.preventDefault()
+    this.resetState ({
+
+    })
+  }
+
+//   const resetState = () => {
+    
+//   }
+  
+
   render() {
     return (
       <>
@@ -29,6 +41,7 @@ class Form extends React.Component {
               <button
                 className="bg-orange-300 font-semibold hover:bg-orange-500 rounded-3xl hover:text-white px-7 py-3 mt-3"
                 type="submit"
+                onSubmit={this.handleSubmit}
               >
                 Ajouter
               </button>
