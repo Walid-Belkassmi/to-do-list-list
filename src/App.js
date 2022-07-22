@@ -42,7 +42,7 @@ class App extends React.Component {
     return (
       <>
         <Form addTask={this.addTask} />
-        <List tasks={this.state.tasks} />
+        {/* <List tasks={this.state.tasks} /> */}
       </>
     );
   }
