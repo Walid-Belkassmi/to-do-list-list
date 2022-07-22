@@ -28,6 +28,16 @@ class App extends React.Component {
     console.log(this.state.tasks);
   };
 
+  deleteTask = (i) => {
+    let clonedTasks = [...this.state.tasks]
+    const index = clonedTasks.indexOf(i)
+    clonedTasks.splice(index, 1)
+
+    this.setState({
+      tasks: clonedTasks
+    })
+  }
+
   render() {
     return (
       <>
