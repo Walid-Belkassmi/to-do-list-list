@@ -1,11 +1,14 @@
 import React from 'react'
 
 class List extends React.Component {
+    
+    
     render () {
+        console.log(this.props.taks)
         return (
             <>
                 {this.props.tasks} 
-                console.log({this.props.tasks})
+                
             </>
         )
            
