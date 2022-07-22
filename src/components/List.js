@@ -2,7 +2,7 @@ import React from "react";
 
 class List extends React.Component {
   render() {
-    console.log(this.props.tasks);
+    // console.log(this.props.tasks);
     return <>{this.props.tasks}</>;
   }
 }
