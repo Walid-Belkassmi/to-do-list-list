@@ -19,9 +19,10 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
+      <>
+        <h1 class="text-3xl font-bold underline">Hello world!</h1>
         <Form />
-      </div>
+      </>
     );
   }
 }
