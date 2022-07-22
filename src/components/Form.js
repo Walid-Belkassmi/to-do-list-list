@@ -20,7 +20,7 @@ class Form extends React.Component {
     this.setState({
       task: "",
     });
-    e.target.value = "";
+    e.target.firstChild.firstChild.value = "";
   };
 
   render() {
