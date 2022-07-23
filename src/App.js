@@ -17,6 +17,7 @@ class App extends React.Component {
       {
         description: taskToDo,
         status: "To do",
+        modify: false,
       },
       ...this.state.tasks,
     ];
@@ -24,7 +25,6 @@ class App extends React.Component {
     this.setState({
       tasks: clonedTask,
     });
-
     console.log(this.state.tasks);
   };
 
@@ -33,18 +33,18 @@ class App extends React.Component {
     const index = clonedTasks.indexOf(i);
     clonedTasks.splice(index, 1);
 
-    console.log("delete");
-
     this.setState({
       tasks: clonedTasks,
     });
   };
 
-  // modifTask = (i) => {
-  //   let clonedTask = [...this.state.tasks]
-  //   clonedTask
-
-  // }
+  handleChangeDescription = (i, e) => {
+    const clonedTask = [...this.state.tasks];
+    clonedTask[i].description = e.target.value;
+    this.setState({
+      tasks: clonedTask,
+    });
+  };
 
   render() {
     return (
@@ -55,7 +55,11 @@ class App extends React.Component {
           return <List tasks={task} />;
         })} */}
 
-        <List tasks={this.state.tasks} deleteTask={this.deleteTask} />
+        <List
+          tasks={this.state.tasks}
+          deleteTask={this.deleteTask}
+          changeDescription={this.handleChangeDescription}
+        />
       </>
     );
   }

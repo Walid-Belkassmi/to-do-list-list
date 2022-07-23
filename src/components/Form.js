@@ -37,6 +37,7 @@ class Form extends React.Component {
                 type="text"
                 placeholder="Nouvelle tâche"
                 onChange={this.handleTaskDescriptionChange}
+                required
               />
               <button
                 className="bg-orange-300 font-semibold hover:bg-orange-500 rounded-3xl hover:text-white px-7 py-3 mt-3"
