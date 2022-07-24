@@ -1,4 +1,4 @@
-// import React from "react";
+import React from "react";
 
 // class Form extends React.Component {
 //   constructor() {
@@ -53,10 +53,6 @@
 //   }
 // }
 
-// export default Form;
-
-import React from "react";
-
 class Form extends React.Component {
   constructor() {
     super();
@@ -66,12 +62,10 @@ class Form extends React.Component {
   }
   handleTaskDescriptionChange = (e) => {
     this.setState({ task: e.target.value });
-    // console.log(this.state.task)
   };
   handleSubmit = (e) => {
     e.preventDefault();
     this.props.addTask(this.state.task);
-    console.log(this.state.task);
     this.setState({ task: "" });
   };
   render() {
@@ -85,7 +79,7 @@ class Form extends React.Component {
             className="w-96 px-5 h-8 font-semibold border border-slate-300 text-black rounded"
             type="text"
             onChange={this.handleTaskDescriptionChange}
-            placeholder="Votre tache"
+            placeholder="Your task"
             required
           ></input>
           <button

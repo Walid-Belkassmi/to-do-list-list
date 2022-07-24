@@ -1,6 +1,7 @@
-// import React from "react";
-// import Form from "./components/Form";
-// import List from "./components/List";
+import React from "react";
+import Form from "./components/Form";
+import List from "./components/List";
+import "./App.css";
 
 // class App extends React.Component {
 //   constructor() {
@@ -12,7 +13,6 @@
 //   }
 
 //   addTask = (taskToDo) => {
-//     // console.log(taskToDo);
 //     let clonedTask = [...this.state.tasks];
 //     clonedTask = [
 //       {
@@ -76,13 +76,6 @@
 //   }
 // }
 
-// export default App;
-
-import React from "react";
-import Form from "./components/Form";
-import List from "./components/List";
-import "./App.css";
-
 class App extends React.Component {
   constructor() {
     super();
@@ -110,11 +103,6 @@ class App extends React.Component {
     const clonedTasks = [...this.state.tasks];
     clonedTasks[index].status = e.target.value;
     this.setState({ tasks: clonedTasks });
-    console.log(this.state.tasks);
-  };
-
-  test = (e) => {
-    console.log(e.target.value);
   };
 
   handleModifyTask = (index) => {
@@ -149,7 +137,7 @@ class App extends React.Component {
         </h1>
 
         <Form addTask={this.addTask} />
-        <div className="flex gap-4 justify-center">
+        <div className="flex gap-4 justify-center mb-10">
           <button
             className="px-7 h-10 uppercase font-semibold border-2 rounded-md bg-gray-500 text-white hover:bg-white hover:text-gray-500 hover:border-gray-500"
             onClick={this.handleButtonAll}
@@ -178,9 +166,9 @@ class App extends React.Component {
         <List
           tasks={this.state.tasks}
           deleteTask={this.deleteTask}
-          changeStatus={this.handleChangeStatus}
           buttonModify={this.handleModifyTask}
           changeDescription={this.handleChangeDescription}
+          changeStatus={this.handleChangeStatus}
           filter={this.state.filter}
           test={this.test}
           all={this.state.all}
