@@ -12,7 +12,7 @@
 //               <div className="flex items-start">
 //                 <input
 //                   className="shadow appearance-none border rounded w-1/4 py-2 px-3 mb-5 text-gray-700 leading-tight hover:border-transparent focus:outline-none focus:shadow-outline"
-//                   placeholder="Modifier"
+//                   placeholder="Modify"
 //                   onChange={(e) => this.props.changeDescription(i, e)}
 //                   type="text"
 //                 />
@@ -62,28 +62,22 @@ class List extends React.Component {
               return (
                 <div className="flex justify-center" key={i}>
                   {task.modify === false ? (
-                    <li
-                      className="border-2 px-10 py-2 border-black mb-4"
-                      key={i}
-                    >
-                      <h2 className="text-teal-500 font-bold pb-3 text-center">
-                        Tache {i + 1}
-                      </h2>
+                    <li className="px-10 py-2  mb-4" key={i}>
                       <p className="p-1 italic border w-96">
                         {task.description}
                       </p>
                       <div className="flex gap-7 justify-center">
                         <button
                           className="h-7 font-semibold bg-teal-500 text-white px-2 mt-4  hover:bg-white hover:text-teal-500 hover:border-2 hover:border-teal-500"
-                          onClick={() => this.props.modifyBox(i)}
+                          onClick={() => this.props.buttonModify(i)}
                         >
-                          Modifier
+                          Modify
                         </button>
                         {this.props.displayModify && (
                           <div className="pt-4 flex gap-6">
                             <input
                               className="border italic text-sm"
-                              placeholder="Modifier"
+                              placeholder="Modify"
                               onChange={(event) =>
                                 this.props.changeDescription(i, event)
                               }
@@ -111,20 +105,14 @@ class List extends React.Component {
                   ) : (
                     <div>
                       <ul>
-                        <li
-                          className="border-2 px-10 py-2 border-black mb-4"
-                          key={i}
-                        >
-                          <h2 className="text-teal-500 font-bold pb-3 text-center">
-                            Tache {i + 1}
-                          </h2>
+                        <li className="px-10 py-2 border-black mb-4" key={i}>
                           <p className="p-1 italic border w-96">
                             {task.description}
                           </p>
                           <div className="pt-4 flex gap-6">
                             <input
                               className="border italic text-sm"
-                              placeholder="Modifier"
+                              placeholder="Modify"
                               onChange={(event) =>
                                 this.props.changeDescription(i, event)
                               }
@@ -143,7 +131,7 @@ class List extends React.Component {
                             </select>
                             <button
                               className="bg-slate-100 px-2"
-                              onClick={() => this.props.modifyBox(i)}
+                              onClick={() => this.props.buttonModify(i)}
                             >
                               Valider
                             </button>
@@ -162,28 +150,22 @@ class List extends React.Component {
                 return (
                   <div className="flex justify-center" key={i}>
                     {task.modify === false ? (
-                      <li
-                        className="border-2 px-10 py-2 border-black mb-4"
-                        key={i}
-                      >
-                        <h2 className="text-teal-500 font-bold pb-3 text-center">
-                          Tache {i + 1}
-                        </h2>
+                      <li className="px-10 py-2 border-black mb-4" key={i}>
                         <p className="p-1 italic border w-96">
                           {task.description}
                         </p>
                         <div className="flex gap-5 justify-center">
                           <button
                             className="h-7 font-semibold bg-teal-500 text-white px-2 mt-4  hover:bg-white hover:text-teal-500 hover:border-2 hover:border-teal-500"
-                            onClick={() => this.props.modifyBox(i)}
+                            onClick={() => this.props.buttonModify(i)}
                           >
-                            Modifier
+                            Modify
                           </button>
                           {this.props.displayModify && (
                             <div className="pt-4 flex gap-6">
                               <input
                                 className="border italic text-sm"
-                                placeholder="Modifier"
+                                placeholder="Modify"
                                 onChange={(event) =>
                                   this.props.changeDescription(i, event)
                                 }
@@ -211,10 +193,7 @@ class List extends React.Component {
                     ) : (
                       <div>
                         <ul>
-                          <li
-                            className="border-2 px-10 py-2 border-black mb-4"
-                            key={i}
-                          >
+                          <li className="px-10 py-2 border-black mb-4" key={i}>
                             <h2 className="text-teal-500 font-bold pb-3 text-center">
                               Tache {this.props.tasks.length - i}
                             </h2>
@@ -224,7 +203,7 @@ class List extends React.Component {
                             <div className="pt-4 flex gap-6">
                               <input
                                 className="border italic text-sm"
-                                placeholder="Modifier"
+                                placeholder="Modify"
                                 onChange={(event) =>
                                   this.props.changeDescription(i, event)
                                 }
@@ -243,7 +222,7 @@ class List extends React.Component {
                               </select>
                               <button
                                 className="bg-slate-100 px-2"
-                                onClick={() => this.props.modifyBox(i)}
+                                onClick={() => this.props.buttonModify(i)}
                               >
                                 Valider
                               </button>

@@ -12,6 +12,7 @@
 //   }
 
 //   addTask = (taskToDo) => {
+//     // console.log(taskToDo);
 //     let clonedTask = [...this.state.tasks];
 //     clonedTask = [
 //       {
@@ -178,7 +179,7 @@ class App extends React.Component {
           tasks={this.state.tasks}
           deleteTask={this.deleteTask}
           changeStatus={this.handleChangeStatus}
-          modifyBox={this.handleModifyTask}
+          buttonModify={this.handleModifyTask}
           changeDescription={this.handleChangeDescription}
           filter={this.state.filter}
           test={this.test}
